@@ -25,11 +25,24 @@ nav{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.quote{background:#fff;border:1px solid var(--line);padding:27px}.quote p{font:italic 19px/1.55 Georgia,serif}.quote small{color:var(--muted);font-weight:bold}
 .cta{background:var(--sage);color:#fff;text-align:center;padding:75px 24px}footer{background:#22291f;color:#fff;padding:32px 0}
 @media(max-width:800px){.links{display:none}.stats{grid-template-columns:repeat(2,1fr)}.features,.gallery,.quotes,.split{grid-template-columns:1fr}.gallery img:first-child{grid-column:auto;height:300px}.section{padding:60px 0}}
+
+.book-direct{background:#fff;border:1px solid var(--line);padding:34px;max-width:900px;margin:32px auto 0;box-shadow:0 12px 30px rgba(40,49,38,.06)}
+.book-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.field label{display:block;font-size:13px;font-weight:800;margin-bottom:7px}
+.field input,.field select{width:100%;padding:13px 14px;border:1px solid #d8d5cb;border-radius:8px;background:#fff;font:inherit;color:var(--ink)}
+.field.full{grid-column:1/-1}
+.book-note{margin:18px 0 0;color:var(--muted);font-size:14px}
+.book-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:22px}
+.whatsapp-btn{border:0;cursor:pointer;background:#2f6f45;color:#fff;padding:14px 22px;border-radius:999px;font-weight:800;font-size:15px}
+.availability-note{font-size:13px;color:var(--muted)}
+.direct-highlight{font-size:18px;max-width:720px;margin:0 auto;color:var(--muted)}
+.direct-points{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;margin-top:20px;font-weight:700}
+@media(max-width:800px){.book-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.book-direct{padding:24px}}
 </style>
 </head>
 <body>
 <nav><div class="wrap navin"><a class="brand" href="#">STYLISH 2 BED HOUSE</a>
-<div class="links"><a href="#house">The House</a><a href="#gallery">Gallery</a><a href="#location">Location</a><a href="#reviews">Reviews</a></div>
+<div class="links"><a href="#house">The House</a><a href="#gallery">Gallery</a><a href="#location">Location</a><a href="#reviews">Reviews</a><a href="#direct">Book Direct</a></div>
 <a class="navcta" href="#book">Book your stay</a></div></nav>
 
 <header class="hero"><div class="wrap hero-inner"><div class="hero-box">
@@ -83,9 +96,75 @@ nav{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var
 <div class="quote"><p>“Location — very good, not far from centre. Very clean, nice host, had a lovely stay.”</p><small>WENDY • BOOKING.COM</small></div>
 </div></div></section>
 
-<section class="cta" id="book"><h2>Ready for your next stay?</h2><p>For direct bookings and special prices, call or WhatsApp us on <strong>07472 743296</strong>.</p>
-<div class="buttons" style="justify-content:center"><a class="btn primary" href="https://www.airbnb.co.uk/rooms/1740572272725839316" target="_blank">Book on Airbnb</a><a class="btn primary" href="https://www.booking.com/hotel/gb/stylish-2-bed-house-free-parking-garden-sleeps-4.en-gb.html" target="_blank">Book on Booking.com</a><a class="btn secondary" href="tel:+447472743296">Call 07472 743296</a></div></section>
+<section class="section" id="direct" style="background:#f0ede4"><div class="wrap" style="text-align:center">
+<h2>Book Direct & Save</h2>
+<p class="direct-highlight">Choose your dates below and send us a booking request directly. We will check availability and confirm the price with you before payment.</p>
+<div class="direct-points"><span>✓ Direct prices</span><span>✓ No Airbnb booking fees</span><span>✓ Personal service</span></div>
+<div class="book-direct">
+<form id="bookingForm">
+<div class="book-grid">
+<div class="field"><label for="checkin">Check-in</label><input id="checkin" name="checkin" type="date" required></div>
+<div class="field"><label for="checkout">Check-out</label><input id="checkout" name="checkout" type="date" required></div>
+<div class="field"><label for="guests">Guests</label><select id="guests" name="guests" required><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option></select></div>
+<div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" placeholder="Your name" required></div>
+<div class="field"><label for="phone">Phone / WhatsApp</label><input id="phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+<div class="field full"><label for="message">Message (optional)</label><input id="message" name="message" type="text" placeholder="Anything else we should know?"></div>
+</div>
+<p class="book-note">This is a booking request, not an instant reservation. We will confirm that your dates are available before taking payment.</p>
+<div class="book-actions">
+<button class="whatsapp-btn" type="submit">Check Availability on WhatsApp</button>
+<a class="btn" style="background:var(--ink);color:#fff" href="tel:+447472743296">Call 07472 743296</a>
+</div>
+</form>
+</div>
+<div class="buttons" style="justify-content:center;margin-top:28px">
+<a class="btn primary" href="https://www.airbnb.co.uk/rooms/1740572272725839316" target="_blank" rel="noopener">Book on Airbnb</a>
+<a class="btn primary" href="https://www.booking.com/hotel/gb/stylish-2-bed-house-free-parking-garden-sleeps-4.en-gb.html" target="_blank" rel="noopener">Book on Booking.com</a>
+</div>
+</div></section>
 </main>
 
 <footer><div class="wrap"><strong>Stylish 2 Bed House</strong><br>Shrewsbury, Shropshire · <a href="https://wa.me/447472743296" target="_blank" rel="noopener">WhatsApp 07472 743296</a></div></footer>
+
+<script>
+(function(){
+  const form = document.getElementById('bookingForm');
+  const checkin = document.getElementById('checkin');
+  const checkout = document.getElementById('checkout');
+  const today = new Date();
+  const pad = n => String(n).padStart(2,'0');
+  const todayStr = `${today.getFullYear()}-${pad(today.getMonth()+1)}-${pad(today.getDate())}`;
+  checkin.min = todayStr;
+  checkout.min = todayStr;
+
+  checkin.addEventListener('change', function(){
+    checkout.min = this.value || todayStr;
+    if (checkout.value && checkout.value <= this.value) checkout.value = '';
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (checkout.value <= checkin.value) {
+      alert('Please choose a check-out date after your check-in date.');
+      return;
+    }
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const guests = document.getElementById('guests').value;
+    const message = document.getElementById('message').value.trim();
+
+    const text =
+      `Hello, I would like to book Stylish 2 Bed House directly.%0A%0A` +
+      `Name: ${encodeURIComponent(name)}%0A` +
+      `Check-in: ${encodeURIComponent(checkin.value)}%0A` +
+      `Check-out: ${encodeURIComponent(checkout.value)}%0A` +
+      `Guests: ${encodeURIComponent(guests)}%0A` +
+      `Phone/WhatsApp: ${encodeURIComponent(phone)}` +
+      (message ? `%0AMessage: ${encodeURIComponent(message)}` : '') +
+      `%0A%0APlease confirm availability and the direct-booking price.`;
+
+    window.open(`https://wa.me/447472743296?text=${text}`, '_blank');
+  });
+})();
+</script>
 </body></html>
